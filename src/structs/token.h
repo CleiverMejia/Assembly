@@ -10,6 +10,7 @@ typedef enum {
   COMMA,
   NUMBER,
   WORD,
+  SECTION,
   HALF,
   SYSCALL
 } TokenType;

@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lexer.h"
-#include "token.h"
-#include "parser.h"
-#include "code.h"
+#include "lexer/lexer.h"
+#include "structs/token.h"
+#include "parser/parser.h"
+#include "code/code.h"
 
-int main()
+int main(int argc, char const *argv[])
 {
   Tokens tokens = {};
   Insts ast = {};
 
-  lexer("test.asm", &tokens);
+  lexer(argv[1], &tokens);
   parser(&tokens, &ast);
   code(&ast);
 

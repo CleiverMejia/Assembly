@@ -3,18 +3,18 @@
 #include <stdbool.h>
 #include <string.h>
 #include "lexer.h"
-#include "token.h"
+#include "../structs/token.h"
 
 bool isLetter(char *character);
 bool isNumber(char *character);
 
-void lexer(char *path, Tokens *tokens)
+void lexer(const char *path, Tokens *tokens)
 {
   FILE *file = fopen(path, "r");
 
   if (file == NULL)
   {
-    printf("Error al abrir el archivo\n");
+    printf("Error opening file\n");
     return;
   }
 
@@ -45,6 +45,12 @@ void lexer(char *path, Tokens *tokens)
       }
 
       // printf("Palabra: %s\n", text);
+
+      if (strcmp(text, "sect") == 0)
+      {
+        /* code */
+      }
+      
 
       if (strcmp(text, "a") == 0 ||
           strcmp(text, "b") == 0 ||

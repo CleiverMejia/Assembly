@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "parser.h"
-#include "token.h"
+#include "../structs/token.h"
 
 size_t pos = 0;
 Tokens *toks;
